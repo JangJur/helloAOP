@@ -26,12 +26,15 @@
 	<bean id="id_logger" class="kr.ac.hansung.spring.aop.Logger">
 	</bean>
 
-	<aop:config>
+	<!-- <aop:config>
 		<aop:aspect ref="id_logger" id="myAspect">
 			<aop:pointcut id="selectSound"
 				expression="execution( void kr.ac.hansung.spring.aop.*.sound())" />
-			<aop:after method="aboutToSound"
+			<aop:before method="aboutToSound"
 				pointcut-ref="selectSound" />
 		</aop:aspect>
-	</aop:config>
+	</aop:config> -->
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
 </beans>
